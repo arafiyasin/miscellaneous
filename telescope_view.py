@@ -209,16 +209,18 @@ def show_telescope_view():
         # Scatter plot for stars
         ax.scatter(ra_radians, dec_radius, s=star_sizes, c=star_colors, alpha=0.8)
 
-        # Customize the star chart appearance
-        ax.set_facecolor('white')  # White background for contrast against the dark app
+        # Set the star chart background to white (or any light color that contrasts with dark page background)
+        ax.set_facecolor('white')  # White background for contrast against dark app background
         ax.set_theta_zero_location('S')  # 0 degrees RA at the bottom (South)
         ax.set_ylim(0, 90)  # Limit to hemisphere (Declination range)
-        
+
         # Hide axis labels and grids for a clean look
         ax.set_xticklabels([])
         ax.set_yticklabels([])
+        st.write("Plot created successfully")  # This will confirm that the plot is indeed being generated
 
         return fig
+
 
 
     # Function to resize drawn image to match the size of the star chart
@@ -243,7 +245,7 @@ def show_telescope_view():
             # Create a star chart image
             fig = plot_star_chart(st.session_state.stars)
             buf = io.BytesIO()
-            plt.savefig(buf, format="png", bbox_inches='tight', pad_inches=0, transparent=True)
+            plt.savefig(buf, format="png", bbox_inches='tight', pad_inches=0, transparent=False)  # Disable transparency here
             buf.seek(0)
             
             # Store the star chart image in session state
@@ -366,5 +368,3 @@ elif st.session_state.page == 'k2_18_c':
 elif st.session_state.page == 'kelt_21_b':
     set_cssLanding()
     show_360_LandView("KELT-21 b", "https://skybox.blockadelabs.com/e/7ccd18d63ee7d666a128776f4f36f605")
-
-
