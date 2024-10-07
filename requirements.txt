@@ -5,3 +5,4 @@ pandas==2.2.3
 Pillow==10.4.0
 streamlit==1.39.0
 streamlit_drawable_canvas==0.9.3
+streamlit_javascript
