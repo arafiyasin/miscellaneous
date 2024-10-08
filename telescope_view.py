@@ -96,8 +96,8 @@ def show_360_view(exoplanet_name, iframe_link):
             elif exoplanet_name == "K2-18 b":
                 st.session_state.page = 'k2_18_b'
     with col3:
-        if st.button("🔭 Telescope View"):
-            st.session_state.page = 'telescope'
+        if st.button("🔭 sky View"):
+            st.session_state.page = 'sky'
 
 # Choosinh a star
 def main_content():
@@ -161,7 +161,7 @@ def exoplanent_content():
 
 # Function to display telescope/star chart view
 def show_telescope_view():
-    st.title("Interactive Star Chart with Free Drawing")
+    st.title("Sky view from the Planet")
 
     # Example fallback dataset if Gaia query fails
     def fallback_star_data():
@@ -323,8 +323,8 @@ def show_360_LandView(exoplanet_name, iframe_link):
         if st.button("🔙 Go Back"):
             st.session_state.page = 'main'
     with col3:
-        if st.button("🔭 Telescope View"):
-            st.session_state.page = 'telescope'
+        if st.button("🔭 Sky View"):
+            st.session_state.page = 'Sky'
 
 
 # Main App Logic
@@ -354,7 +354,7 @@ elif st.session_state.page == 'KELT-21_b':
     show_360_view('KELT-21 b', kelt_url)
 
 # Show telescope view when the user clicks the "Telescope View" button
-elif st.session_state.page == 'telescope':
+elif st.session_state.page == 'sky':
     set_css()
     show_telescope_view()
 
