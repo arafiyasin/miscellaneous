@@ -10,11 +10,20 @@ from streamlit_drawable_canvas import st_canvas
 import io
 from PIL import Image, ImageOps
 
+hide_streamlit_style = """
+            <style>
+            [data-testid="stToolbar"] {visibility: hidden !important;}
+            footer {visibility: hidden !important;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
+
 
 # URLs for different planets
 kepler_url = "https://eyes.nasa.gov/apps/exo/#/planet/K2-18_b"
 hats_url = "https://eyes.nasa.gov/apps/exo/#/planet/K2-18_c"
 kelt_url = "https://eyes.nasa.gov/apps/exo/#/planet/KELT-21_b"
+
 
 # CSS for Styling Bubbles with Images
 def set_css():
