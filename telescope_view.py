@@ -110,7 +110,7 @@ def show_360_view(exoplanet_name, iframe_link):
 
 # Choosinh a star
 def main_content():
-    st.title("Stars")
+    st.title("Stars!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!")
 
     # Create a bubble container with clickable bubbles
     cols = st.columns(3)
